@@ -1,0 +1,8 @@
+data/
+.cache/
+logs/
+results/
+__pycache__/
+*.pyc
+.venv/
+deliverables/
