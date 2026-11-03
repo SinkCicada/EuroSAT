@@ -1,0 +1,118 @@
+{
+  "baseline": {
+    "parameters": 11181642,
+    "conv_linear_macs": 148050944,
+    "mean_val_accuracy": 0.9696296296296296,
+    "mean_training_seconds": 138.206997847495,
+    "clean": {
+      "accuracy": {
+        "mean": 0.9671604938271605,
+        "sd": 0.0012345679012345512
+      },
+      "macro_f1": {
+        "mean": 0.9659173886956645,
+        "sd": 0.0013115410155065323
+      }
+    },
+    "dark": {
+      "accuracy": {
+        "mean": 0.374238683127572,
+        "sd": 0.022024266913550312
+      },
+      "macro_f1": {
+        "mean": 0.28759753813671474,
+        "sd": 0.03582937977569442
+      }
+    },
+    "blur": {
+      "accuracy": {
+        "mean": 0.691604938271605,
+        "sd": 0.004340344649690583
+      },
+      "macro_f1": {
+        "mean": 0.6642918730172049,
+        "sd": 0.004958326225576827
+      }
+    },
+    "mean_median_latency_ms": 0.7864426573117574
+  },
+  "se": {
+    "parameters": 11268682,
+    "conv_linear_macs": 148137984,
+    "mean_val_accuracy": 0.9650205761316872,
+    "mean_training_seconds": 153.42524187732488,
+    "clean": {
+      "accuracy": {
+        "mean": 0.9640329218106997,
+        "sd": 0.0028617841400351727
+      },
+      "macro_f1": {
+        "mean": 0.962500220549079,
+        "sd": 0.0031577318430569606
+      }
+    },
+    "dark": {
+      "accuracy": {
+        "mean": 0.3362962962962963,
+        "sd": 0.019402757587039143
+      },
+      "macro_f1": {
+        "mean": 0.24773393079588893,
+        "sd": 0.015338505318189014
+      }
+    },
+    "blur": {
+      "accuracy": {
+        "mean": 0.6967901234567901,
+        "sd": 0.022149400572926966
+      },
+      "macro_f1": {
+        "mean": 0.6713631986599764,
+        "sd": 0.025060305142074687
+      }
+    },
+    "mean_median_latency_ms": 0.9757013320922852
+  },
+  "cbam": {
+    "parameters": 11269466,
+    "conv_linear_macs": 148291664,
+    "mean_val_accuracy": 0.9621399176954732,
+    "mean_training_seconds": 210.17311306701353,
+    "clean": {
+      "accuracy": {
+        "mean": 0.962880658436214,
+        "sd": 0.001425556220221343
+      },
+      "macro_f1": {
+        "mean": 0.961382184464134,
+        "sd": 0.0017743006908798465
+      }
+    },
+    "dark": {
+      "accuracy": {
+        "mean": 0.34213991769547325,
+        "sd": 0.037904518563910757
+      },
+      "macro_f1": {
+        "mean": 0.2389135617062238,
+        "sd": 0.03282485578008105
+      }
+    },
+    "blur": {
+      "accuracy": {
+        "mean": 0.7111111111111111,
+        "sd": 0.020865293272417738
+      },
+      "macro_f1": {
+        "mean": 0.6814273905845102,
+        "sd": 0.020384277869857092
+      }
+    },
+    "mean_median_latency_ms": 1.3892266352971394
+  },
+  "application_selection": {
+    "variant": "baseline",
+    "seed": 42,
+    "rule": "highest mean best-validation accuracy across three seeds; fixed representative seed42"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "training_commit": "08c4b4c",
+  "training_git_full_sha": "08c4b4c27af700933d91eab2f5fafc788d0de3c5",
+  "sha256": {
+    "models.py": "6866791f9895358305b152324db3eee422a6d7b82caa2920e8b7f1a2e5df72b0",
+    "data.py": "ce988c1b73bffbc024504c5d67d0041c0da0a92dfc395f5a140f53b5155aa2d3",
+    "download.py": "eb1ffbf7f6749dbdc8c0d76c92cc5587f8ea2e0e8ba28449f10e37c67ccd9bf9",
+    "train.py": "aa9c504c602877f3637697f9ed7a656597cfefad88a8f2300bb3c6cfd57896e2",
+    "smoke.py": "d93fdf5b0bf1133a884de525a3ced03fa25855d804d9939a10161742824f2756",
+    "run_experiments.py": "5dc1a06cc61a85c7796d3d924067cd5eb83242d870bc08538af8aecd6b9ecb80",
+    "analyze.py": "a927799242e673ee91989261594ad7bbce53d17cc55ad0a6fce7c4a12320cd0e",
+    "predict.py": "c9a9a0f40587428a85c0e675a425386c6f6fb5fd4bb141a734a650bcea2faf6c",
+    "requirements.txt": "f8a676f8e4efd71da96a1a706470e0a4d19d85cab60b5566aadfea509644d1fc"
+  }
+}

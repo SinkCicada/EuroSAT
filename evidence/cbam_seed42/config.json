@@ -1,0 +1,17 @@
+{
+  "variant": "cbam",
+  "data": "data",
+  "output": "results",
+  "epochs": 30,
+  "batch_size": 128,
+  "lr": 0.001,
+  "seed": 42,
+  "workers": 4,
+  "smoke": false,
+  "device": "cuda",
+  "torch_version": "2.7.1+cu126",
+  "gpu": "NVIDIA A10",
+  "git_commit": "08c4b4c27af700933d91eab2f5fafc788d0de3c5",
+  "initialization": "random; no pretrained weights",
+  "input_size": 64
+}
