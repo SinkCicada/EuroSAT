@@ -1,0 +1,7 @@
+{
+  "verified_metric_groups": 27,
+  "verified_prediction_rows": 109350,
+  "training_runs": 9,
+  "epochs_per_run": 30,
+  "accuracy_correct_counts_macro_f1_match": true
+}
