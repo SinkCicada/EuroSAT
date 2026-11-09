@@ -1,0 +1,12 @@
+{
+  "screen_validation": {
+    "original": 0.974320987654321,
+    "small": 0.9837037037037037,
+    "small_se": 0.9839506172839506,
+    "small_cbam": 0.9832098765432099
+  },
+  "candidate": "small_se",
+  "control": "small",
+  "selection_uses_test": false,
+  "weight_decay": 0.0001
+}

@@ -1,0 +1,11 @@
+{
+  "parameters": 11190346,
+  "conv_linear_macs": 560747520,
+  "input_shape": [
+    1,
+    3,
+    64,
+    64
+  ],
+  "macs_definition": "Conv2d+Linear only; one multiply-accumulate = one MAC"
+}
