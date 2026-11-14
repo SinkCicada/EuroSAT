@@ -10,15 +10,17 @@
 | --- | --- |
 | `eurosat-baseline-seed42.pt` | 报告的河流演示权重，保存为 `results/baseline_seed42/best.pt` |
 | `eurosat-small-seed42.pt` | 第二轮小图版 B 的种子 42 权重，保存为 `round2_20261104/results/small_seed42/best.pt`，用第二轮 `models.py` 的 `make_model("small")` 加载 `state_dict` |
-| `eurosat-reproduction.zip` | 两轮全部 19 份最佳权重、逐轮训练记录、固定划分清单和逐图预测，解压到仓库根目录 |
+| `eurosat-reproduction.zip` | 两轮全部 19 份最佳权重、逐轮训练记录、固定划分清单和逐图预测，解压到仓库根目录。固定划分清单对应实际使用的 TorchGeo `EuroSAT.zip`，MD5 为 `c8fa014336c82ac7804f0398fcb19387` |
 | `SHA256SUMS.txt` | 三个附件的校验值，在下载目录执行 `sha256sum -c SHA256SUMS.txt` |
 
-下载第一轮演示权重并放到对应位置后，在仓库根目录执行：
+下载第一轮演示权重并放到对应位置后，在仓库根目录执行。数据准备函数会校验、解压并生成划分清单；`find` 兼容 RGB 数据包的目录差异。
 
 ```bash
-python download.py
+python -c 'from data import prepare; prepare()'
+image=$(find data/raw -name River_535.jpg -print -quit)
+test -n "$image" || exit 1
 python predict.py --checkpoint results/baseline_seed42/best.pt \
-  --image data/raw/2750/River/River_535.jpg --output results/demo_repro
+  --image "$image" --output results/demo_repro
 ```
 
 基于经典 ResNet-18，从零训练 baseline、SE、CBAM 三组模型，分析准确率、参数量、卷积/线性层 MACs、模型推理耗时，以及受控亮度和模糊扰动下的表现。应用支持单张 RGB 卫星图块分类和 Grad-CAM 可视化。
