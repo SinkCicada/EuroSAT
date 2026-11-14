@@ -1,5 +1,26 @@
 # EuroSAT 遥感土地覆盖分类与注意力机制实验
 
+> 两轮实验代码均在本仓库。第一轮使用原始 ResNet-18 对照全层 SE 和 CBAM；[第二轮](round2_20261104/README.md) 比较原版、小图输入端改造和局部注意力。运行参数及结果请分别查看本页和第二轮说明。
+
+## 权重与复现资料
+
+已发布的附件统一从 [GitHub Releases](https://github.com/SinkCicada/EuroSAT/releases) 下载。附件尚未出现时，可按下面的训练命令生成权重。
+
+| 文件 | 内容与位置 |
+| --- | --- |
+| `eurosat-baseline-seed42.pt` | 报告的河流演示权重，保存为 `results/baseline_seed42/best.pt` |
+| `eurosat-small-seed42.pt` | 第二轮小图版 B 的种子 42 权重，保存为 `round2_20261104/results/small_seed42/best.pt`，用第二轮 `models.py` 的 `make_model("small")` 加载 `state_dict` |
+| `eurosat-reproduction.zip` | 两轮全部 19 份最佳权重、逐轮训练记录、固定划分清单和逐图预测，解压到仓库根目录 |
+| `SHA256SUMS.txt` | 三个附件的校验值，在下载目录执行 `sha256sum -c SHA256SUMS.txt` |
+
+下载第一轮演示权重并放到对应位置后，在仓库根目录执行：
+
+```bash
+python download.py
+python predict.py --checkpoint results/baseline_seed42/best.pt \
+  --image data/raw/2750/River/River_535.jpg --output results/demo_repro
+```
+
 基于经典 ResNet-18，从零训练 baseline、SE、CBAM 三组模型，分析准确率、参数量、卷积/线性层 MACs、模型推理耗时，以及受控亮度和模糊扰动下的表现。应用支持单张 RGB 卫星图块分类和 Grad-CAM 可视化。
 
 本项目使用现成 EuroSAT RGB 数据，无需自行采集或标注。它是图像级分类，不生成地物分割图或检测框。
